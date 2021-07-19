@@ -1,0 +1,161 @@
+@import "./timeline";
+@import "./score";
+
+.resume {
+    max-width: 800px;
+    margin: 1rem auto;
+    &__header {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 1rem;
+        &__intro {
+            width: 100%;
+            &__name {
+                font-size: 2rem;
+                font-weight: 500;
+                display: block;
+            }
+            &__title {
+                display: block;
+                font-weight: 400;
+            }
+        }
+        &__contact {
+            width: 100%;
+            margin-left: 2rem;
+            display: flex;
+            justify-content: space-between;
+            &__item {
+                display: block;
+                font-size: 0.75em;
+                font-weight: 200;
+                color: #333;
+                margin-bottom: 0.25rem;
+            }
+        }
+    }
+    &__content {
+        display: flex;
+        justify-content: space-evenly;
+        &__row {
+            width: 100%;
+        }
+    }
+}
+
+.contact {
+    display: flex;
+    &__title_box {
+        margin-right: 0.5rem;
+        &__title {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+    }
+    &__content {
+        padding-left: 0.5rem;
+        border-left: solid 1px;
+    }
+}
+
+.section {
+    padding: 1rem;
+    width: auto;
+
+    &__header {
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+        border-bottom: dotted 1px;
+    }
+}
+
+.job {
+    margin-top: 0.25em;
+    &__title {
+        display: block;
+    }
+    &__company {
+        font-size: 0.75em;
+    }
+    &__detail {
+        font-size: 0.75em;
+        ul {
+            list-style-type: square;
+            padding-left: 1em;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+
+    }
+
+}
+
+.strengths {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 150px;
+    &__strength--low {
+        align-self: flex-end;
+    }
+}
+
+.image {
+    max-width: 75px;
+    &__img {
+        width: 75px;
+        height: 75px;
+    }
+    &__text {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        font-size: 0.75rem;
+    }
+}
+
+.skills_explanation {
+    margin-bottom: 1rem;
+    &__explanation {
+        line-height: 0.6em;
+        &__text {
+            font-size: 0.6rem;
+            margin-left: 1rem;
+        }
+    }
+}
+
+.skill_section {
+    margin-bottom: 1rem;
+    &__header {
+        display: block;
+        margin-bottom: 1rem;
+    }
+}
+
+.skill {
+    display: flex;
+    flex-direction: row;
+    &__text {
+        width: 100%;
+        font-size: 0.75rem;
+    }
+    &__score {
+        align-self: center;
+    }
+}
+
+.interests {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__image {
+        margin: 1rem;
+    }
+}
+
+.statement {
+    font-size: 0.75rem;
+}

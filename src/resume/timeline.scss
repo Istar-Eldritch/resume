@@ -1,0 +1,43 @@
+
+
+.timeline__value {
+    display: flex;
+    flex-direction: row;
+
+    &__time {
+        min-width: 100px;
+        max-width: 100px;
+        border-right: 2px solid;
+        padding-right: 0.5rem;
+
+        &__text {
+            font-size: 0.75em;
+            display: block;
+        }
+    }
+    &__dot_bg {
+        float: right;
+        min-width: 14px;
+        height: 14px;
+        width: 14px;
+        background-color: white;
+        border-radius: 50%;
+        position: relative;
+        left: -7px;
+        bottom: -7px;
+    }
+    &__dot_fg {
+        float: right;
+        min-width: 10px;
+        height: 10px;
+        width: 10px;
+        background-color: black;
+        border-radius: 50%;
+        position: relative;
+        left: -20px;
+        bottom: -9px;
+    }
+    &__content {
+        padding-bottom: 1rem;
+    }
+}

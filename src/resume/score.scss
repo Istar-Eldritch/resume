@@ -1,0 +1,17 @@
+
+.score {
+    display: inline-flex;
+    flex-direction: row;
+    min-width: 60px;
+    justify-content: space-between;
+    &__dot {
+        min-width: 10px;
+        height: 10px;
+        width: 10px;
+        background-color: lightgrey;
+        border-radius: 50%;
+        &--high {
+            background-color: black;
+        }
+    }
+}
