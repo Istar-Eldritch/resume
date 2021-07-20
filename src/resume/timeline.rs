@@ -36,6 +36,7 @@ impl Component for TimeLineValue {
     fn view(&self) -> Html {
         let to_date = self.props.to.format("%B %Y");
         let from_date = self.props.from.format("%B %Y");
+
         html! {
             <div class="timeline__value">
                 <div class="timeline__value__time">

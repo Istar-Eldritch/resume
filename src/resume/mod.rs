@@ -97,7 +97,7 @@ impl Component for Resume {
                                     from={UtcDate::from_utc(NaiveDate::from_ymd(2019, 10, 1), Utc {})}
                                     to={present
                                 }>
-                                    <Job title="Lead Engineer" company={html!{<a href="https://www.fluidic.com/">{"Fluidic Analytics"}</a>}}>
+                                    <Job open=true title="Lead Engineer" company={html!{<a href="https://www.fluidic.com/">{"Fluidic Analytics"}</a>}}>
                                         <ul>
                                             <li>{"Implemented the cloud architecture from scratch, services in async Rust & Python, Azure Blob storage, Postgres, Kubernetes"}</li>
                                             <li>{"Designed and implemented the data synchronization mechanism between instruments and cloud using JSON-RPC"}</li>
@@ -352,27 +352,40 @@ impl Component for Section {
     }
 }
 
-#[derive(Properties, Clone, PartialEq)]
+#[derive(Properties, Clone, PartialEq, Debug)]
 struct JobProperties {
     pub title: String,
     pub company: VNode,
     pub children: Children,
+    #[prop_or_default]
+    pub open: bool,
 }
 
 struct Job {
     props: JobProperties,
+    link: ComponentLink<Self>,
+}
+
+enum JobMessages {
+    ToggleDetail,
 }
 
 impl Component for Job {
-    type Message = ();
+    type Message = JobMessages;
     type Properties = JobProperties;
 
-    fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        Job { props }
+    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
+        log::debug!("{:?}", props);
+        Job { props, link }
     }
 
-    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
-        false
+    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+        match msg {
+            JobMessages::ToggleDetail => {
+                self.props.open = !self.props.open;
+                true
+            }
+        }
     }
 
     fn change(&mut self, props: Self::Properties) -> ShouldRender {
@@ -384,11 +397,18 @@ impl Component for Job {
     }
 
     fn view(&self) -> Html {
+        let mut detail_class = classes!("job__detail");
+        if !self.props.open {
+            detail_class.push("job__detail--hidden")
+        }
+
+        let click_cb = self.link.callback(|_| JobMessages::ToggleDetail);
+
         html! {
-            <div class="job">
+            <div class="job" onclick=click_cb>
                 <span class="job__title">{self.props.title.clone()}</span>
                 <span class="job__company">{self.props.company.clone()}</span>
-                <div class="job__detail">
+                <div class=detail_class>
                     {self.props.children.clone()}
                 </div>
             </div>

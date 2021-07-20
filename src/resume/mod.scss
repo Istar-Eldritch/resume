@@ -70,7 +70,9 @@
 }
 
 .job {
+    cursor: pointer;
     margin-top: 0.25em;
+
     &__title {
         display: block;
     }
@@ -87,6 +89,9 @@
             margin-bottom: 0.5em;
         }
 
+        &--hidden {
+            display: none;
+        }
     }
 
 }
