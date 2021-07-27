@@ -4,9 +4,16 @@ mod timeline;
 use chrono::{Date as UtcDate, NaiveDate, Utc};
 use js_sys::Date;
 use score::Score;
+use serde::Deserialize;
 use timeline::{TimeLine, TimeLineValue};
 use yew::prelude::*;
 use yew::virtual_dom::VNode;
+
+#[derive(Deserialize)]
+pub struct QueryArgs {
+    open: Option<bool>,
+}
+
 pub struct Resume {}
 
 impl Component for Resume {
@@ -37,6 +44,12 @@ impl Component for Resume {
             ),
             Utc {},
         );
+
+        let query = yew::utils::document().location().unwrap().search().unwrap();
+        let args: QueryArgs =
+            serde_urlencoded::from_str(query.strip_prefix("?").unwrap_or("")).unwrap();
+
+        let open = args.open.unwrap_or(false);
 
         html! {
             <div class="resume">
@@ -86,7 +99,7 @@ impl Component for Resume {
                                     from={UtcDate::from_utc(NaiveDate::from_ymd(2019, 10, 1), Utc {})}
                                     to={present
                                 }>
-                                    <Job open=true title="Lead Engineer" company={html!{<a href="https://www.fluidic.com/">{"Fluidic Analytics"}</a>}}>
+                                    <Job open={true} title="Lead Engineer" company={html!{<a href="https://www.fluidic.com/">{"Fluidic Analytics"}</a>}}>
                                         <ul>
                                             <li>{"Implemented the cloud architecture from scratch, services in async Rust & Python, Azure Blob storage, Postgres, Kubernetes"}</li>
                                             <li>{"Designed and implemented the data synchronization mechanism between instruments and cloud using JSON-RPC"}</li>
@@ -100,7 +113,7 @@ impl Component for Resume {
                                     from={UtcDate::from_utc(NaiveDate::from_ymd(2018, 10, 15), Utc {})}
                                     to={UtcDate::from_utc(NaiveDate::from_ymd(2019, 10, 1), Utc {})
                                 }>
-                                    <Job title="Tech Lead" company=html!{<a href="https://web.archive.org/web/20180830162534/https://repositive.io/">{"Repositive"}</a>}>
+                                    <Job open={open} title="Tech Lead" company=html!{<a href="https://web.archive.org/web/20180830162534/https://repositive.io/">{"Repositive"}</a>}>
                                         <ul>
                                             <li>{"Line management,technical direction and vision"}</li>
                                             <li>{"Managed the technial and architecture backlog"}</li>
@@ -114,7 +127,7 @@ impl Component for Resume {
                                 from={UtcDate::from_utc(NaiveDate::from_ymd(2016, 6, 15), Utc {})}
                                 to={UtcDate::from_utc(NaiveDate::from_ymd(2018, 10, 1), Utc {})
                                 }>
-                                    <Job title="Backend Engineer" company=html!{<a href="https://web.archive.org/web/20180830162534/https://repositive.io/">{"Repositive"}</a>}>
+                                    <Job open={open} title="Backend Engineer" company=html!{<a href="https://web.archive.org/web/20180830162534/https://repositive.io/">{"Repositive"}</a>}>
                                         <ul>
                                         <li>{"Designed and implmented the first iterations of the Discover platform, migrated the monolitic application to microservices in Rust & Typescript"}</li>
                                         <li>{"Implemented a fine grained attribute based permission system (ABAC)"}</li>
@@ -128,7 +141,7 @@ impl Component for Resume {
                                 from={UtcDate::from_utc(NaiveDate::from_ymd(2015, 11, 1), Utc {})}
                                 to={UtcDate::from_utc(NaiveDate::from_ymd(2016, 5, 1), Utc {})
                                 }>
-                                    <Job title="Developer Relations" company=html!{<a href="https://web.archive.org/web/20191031123107/https://sourced.tech/">{"source{d}"}</a>}>
+                                    <Job open={open} title="Developer Relations" company=html!{<a href="https://web.archive.org/web/20191031123107/https://sourced.tech/">{"source{d}"}</a>}>
                                         <ul>
                                         <li>{"Developed tooling for BI using BigQuery"}</li>
                                         <li>{"Interviewed a large number of software engineers (+500)"}</li>
@@ -141,7 +154,7 @@ impl Component for Resume {
                                 from={UtcDate::from_utc(NaiveDate::from_ymd(2014, 5, 1), Utc {})}
                                 to={UtcDate::from_utc(NaiveDate::from_ymd(2015, 11, 1), Utc {})
                                 }>
-                                    <Job title="Software Engineer" company=html!{<a href="https://www.glofox.com/">{"Glofox"}</a>}>
+                                    <Job open={open} title="Software Engineer" company=html!{<a href="https://www.glofox.com/">{"Glofox"}</a>}>
                                         <ul>
                                         <li>{"Developed the first iteration of the Glofox product"}</li>
                                         <li>{"Helped design and implement the notifications system using MongoDB & Redis"}</li>
