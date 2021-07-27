@@ -402,15 +402,19 @@ impl Component for Job {
 
     fn view(&self) -> Html {
         let mut detail_class = classes!("job__detail");
+        let mut caret_class = classes!("job__title__caret", "fas");
         if !self.props.open {
-            detail_class.push("job__detail--hidden")
+            detail_class.push("job__detail--hidden");
+            caret_class.push("fa-caret-right");
+        } else {
+            caret_class.push("fa-caret-down");
         }
 
         let click_cb = self.link.callback(|_| JobMessages::ToggleDetail);
 
         html! {
-            <div class="job" onclick=click_cb>
-                <span class="job__title">{self.props.title.clone()}</span>
+            <div class="job">
+                <span class="job__title" onclick=click_cb><span><i class={caret_class}/></span> <span>{self.props.title.clone()}</span></span>
                 <span class="job__company">{self.props.company.clone()}</span>
                 <div class=detail_class>
                     {self.props.children.clone()}

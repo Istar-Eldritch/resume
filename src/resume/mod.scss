@@ -75,6 +75,10 @@
 
     &__title {
         display: block;
+        
+        &__caret {
+            margin-right: 0.5rem;
+        }
     }
     &__company {
         font-size: 0.75em;
