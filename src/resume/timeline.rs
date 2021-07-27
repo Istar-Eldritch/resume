@@ -1,4 +1,4 @@
-use chrono::{Date, Utc};
+use chrono::{Date, Datelike, Utc};
 use yew::prelude::*;
 
 #[derive(Properties, Clone, PartialEq)]
@@ -34,14 +34,21 @@ impl Component for TimeLineValue {
     }
 
     fn view(&self) -> Html {
-        let to_date = self.props.to.format("%B %Y");
-        let from_date = self.props.from.format("%B %Y");
+        let present = js_sys::Date::new_0();
+
+        let to_date = if self.props.to.month() == present.get_utc_month() + 1 {
+            String::from("Present")
+        } else {
+            self.props.to.format("%B %Y").to_string()
+        };
+
+        let from_date = self.props.from.format("%B %Y").to_string();
 
         html! {
             <div class="timeline__value">
                 <div class="timeline__value__time">
-                    <span class="timeline__value__time__text">{to_date.to_string()}</span>
-                    <span class="timeline__value__time__text">{from_date.to_string()}</span>
+                    <span class="timeline__value__time__text">{to_date}</span>
+                    <span class="timeline__value__time__text">{from_date}</span>
                 </div>
                 <div class="timeline__value__dot_bg"></div>
                 <div class="timeline__value__dot_fg"></div>

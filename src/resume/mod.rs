@@ -32,7 +32,7 @@ impl Component for Resume {
         let present: UtcDate<Utc> = UtcDate::from_utc(
             NaiveDate::from_ymd(
                 present.get_utc_full_year() as i32,
-                present.get_utc_month(),
+                present.get_utc_month() + 1,
                 present.get_utc_date(),
             ),
             Utc {},
@@ -62,20 +62,9 @@ impl Component for Resume {
                 <div class="resume__content">
                     <div class="resume__content__row">
                         <Section title="PERSONAL STATEMENT">
-                            <p class="statement">{"I'm a software developer with experience in mobile,
-                            web development, tooling and infrastructure."}</p>
-                            <p class="statement">{"I have in depth knowledge of the software development process
-                            from beginning to end and I helped define the agile process
-                            based on scrum that is used at Repositive. I architected
-                            microservices systems from scratch using DDD, CQRS and Event
-                            Sourcing and I have experience designing both public and
-                            private APIs using REST & RPC."}</p>
-                            <p class="statement">{"I create environments that provide high autonomy and I have
-                            experience coaching team members, my leadership style is
-                            based on trust and communicating what is important clearly. I'm
-                            a team builder, I learned how to define the hiring strategy at
-                            source{d} and I proved it at Repositive by taking an active role
-                            in the hiring of my own team."}</p>
+                            <p class="statement">{"I'm a software developer with experience in mobile, web development, tooling and infrastructure with applications mainly in life sciences and healthcare."}</p>
+                            <p class="statement">{"I have in-depth knowledge of the software development process from beginning to end, and I helped establish the agile methodology based on scrum used at Repositive. I designed microservices systems from scratch using DDD, CQRS and Event Sourcing both at Repositive and Fluidic Analytics. I'm a very flexible team player with a wide range of skills; at Fluidic, I designed and wrote software for both cloud, scientific instrumentation and production line."}</p>
+                            <p class="statement">{"As a team lead, I create high autonomy environments; my leadership style is based on trust and communicating what is important clearly. I'm a team builder, I learned how to define the hiring strategy at source{d}, and I proved it at Repositive & Fluidic Analytics by taking an active role in the hiring of members of my team."}</p>
                         </Section>
                         <Section title="STRENGTHS">
                             <div class="strengths">
@@ -170,7 +159,7 @@ impl Component for Resume {
                             <div class="skills_explanation">
                                 <div class="skills_explanation__explanation">
                                     <Score score=1/>
-                                    <span class="skills_explanation__explanation__text">{"Used on academic context or pet projects"}</span>
+                                    <span class="skills_explanation__explanation__text">{"Used on passion projects"}</span>
                                 </div>
                                 <div class="skills_explanation__explanation">
                                     <Score score=2/>
@@ -178,15 +167,15 @@ impl Component for Resume {
                                 </div>
                                 <div class="skills_explanation__explanation">
                                     <Score score=3/>
-                                    <span class="skills_explanation__explanation__text">{"At least one year of professional experience"}</span>
+                                    <span class="skills_explanation__explanation__text">{"At least one year of daily professional experience"}</span>
                                 </div>
                                 <div class="skills_explanation__explanation">
                                     <Score score=4/>
-                                    <span class="skills_explanation__explanation__text">{"At least three years of professional experience"}</span>
+                                    <span class="skills_explanation__explanation__text">{"At least three years of daily professional experience"}</span>
                                 </div>
                                 <div class="skills_explanation__explanation">
                                     <Score score=5/>
-                                    <span class="skills_explanation__explanation__text">{"Knowledge beyond common professional requirements"}</span>
+                                    <span class="skills_explanation__explanation__text">{"At least five years of daily professional experience"}</span>
                                 </div>
                             </div>
 
@@ -194,28 +183,30 @@ impl Component for Resume {
                                 <span class="skill_section__header">{"Software Development"}</span>
                                 <div class="skill_section__content">
                                     <Skill score=4 name="Rust"/>
-                                    <Skill score=4 name="JavaScript"/>
-                                    <Skill score=4 name="TypeScript"/>
-                                    <Skill score=4 name="Node.js"/>
-                                    <Skill score=4 name="React"/>
+                                    <Skill score=5 name="JavaScript"/>
+                                    <Skill score=5 name="TypeScript"/>
+                                    <Skill score=5 name="Node.js"/>
+                                    <Skill score=3 name="React"/>
                                     <Skill score=3 name="Java"/>
                                     <Skill score=3 name="Android"/>
                                     <Skill score=2 name="Scala"/>
                                     <Skill score=2 name="Play Framework"/>
                                     <Skill score=1 name="Haskell"/>
                                     <Skill score=1 name="Lua"/>
+                                    <Skill score=1 name="VHDL"/>
                                 </div>
                             </div>
 
                             <div class="skill_section">
                                 <span class="skill_section__header">{"Infrastructure & Devops"}</span>
                                 <div class="skill_section__content">
-                                    <Skill score=4 name="Kubernetes"/>
-                                    <Skill score=4 name="Docker"/>
+                                    <Skill score=5 name="Kubernetes"/>
+                                    <Skill score=5 name="Docker"/>
                                     <Skill score=2 name="Terraform"/>
                                     <Skill score=4 name="Bash"/>
                                     <Skill score=3 name="AWS"/>
-                                    <Skill score=3 name="GCP"/>
+                                    <Skill score=4 name="GCP"/>
+                                    <Skill score=3 name="MS Azure"/>
                                     <Skill score=4 name="CI/CD"/>
                                 </div>
                             </div>
@@ -223,12 +214,12 @@ impl Component for Resume {
                             <div class="skill_section">
                                 <span class="skill_section__header">{"Databases"}</span>
                                 <div class="skill_section__content">
-                                    <Skill score=4 name="Postgres"/>
+                                    <Skill score=5 name="Postgres"/>
                                     <Skill score=4 name="Redis"/>
                                     <Skill score=3 name="Elasticsearch"/>
                                     <Skill score=2 name="MongoDB"/>
                                     <Skill score=1 name="CrocoroachDB"/>
-                                    <Skill score=1 name="ArangoDB"/>
+                                    <Skill score=1 name="Neo4j"/>
                                 </div>
                             </div>
 
@@ -237,9 +228,9 @@ impl Component for Resume {
                                 <span class="skill_section__header">{"Paradigms & Patterns"}</span>
                                 <div class="skill_section__content">
                                     <Skill score=4 name="Object Oriented"/>
-                                    <Skill score=4 name="Functional"/>
+                                    <Skill score=5 name="Functional"/>
                                     <Skill score=3 name="CQRS"/>
-                                    <Skill score=3 name="Event Sourcing"/>
+                                    <Skill score=4 name="Event Sourcing"/>
                                     <Skill score=4 name="Microservices"/>
                                 </div>
                             </div>
