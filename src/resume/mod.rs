@@ -419,12 +419,13 @@ impl Component for Job {
 
     fn view(&self) -> Html {
         let mut detail_class = classes!("job__detail");
-        let mut caret_class = classes!("job__title__caret", "fas");
+        let mut caret_class = classes!("fas");
         let children = if self.props.children.is_none() {
             log::debug!("No children!");
             caret_class.push("job__title__caret--hidden");
             html!()
         } else {
+            caret_class.push("job__title__caret");
             if !self.props.open {
                 detail_class.push("job__detail--hidden");
                 caret_class.push("fa-caret-right");
