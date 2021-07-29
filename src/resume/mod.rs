@@ -56,7 +56,7 @@ impl Component for Resume {
                 <div class="resume__header">
                     <div class="resume__header__intro">
                         <span class="resume__header__intro__name">{"Ruben Paz"}</span>
-                        <span class="resume__header__intro__title">{"Software Developer"}</span>
+                        <span class="resume__header__intro__title">{"Engineering Manager"}</span>
                     </div>
                     <div class="resume__header__contact">
                         <Contact title="Address">
@@ -75,14 +75,15 @@ impl Component for Resume {
                 <div class="resume__content">
                     <div class="resume__content__row">
                         <Section title="PERSONAL STATEMENT">
-                            <p class="statement">{"I'm a software developer with experience in mobile, web development, tooling and infrastructure with applications mainly in life sciences and healthcare."}</p>
-                            <p class="statement">{"I have in-depth knowledge of the software development process from beginning to end, and I helped establish the agile methodology based on scrum used at Repositive. I designed microservices systems from scratch using DDD, CQRS and Event Sourcing both at Repositive and Fluidic Analytics. I'm a very flexible team player with a wide range of skills; at Fluidic, I designed and wrote software for both cloud, scientific instrumentation and production line."}</p>
-                            <p class="statement">{"As a team lead, I create high autonomy environments; my leadership style is based on trust and communicating what is important clearly. I'm a team builder, I learned how to define the hiring strategy at source{d}, and I proved it at Repositive & Fluidic Analytics by taking an active role in the hiring of members of my team."}</p>
+                            <p class="statement">{"I'm a engineering manager with a wide range of cross-platform experience in life sciences and healthcare, mainly designing and building infrastructure for data processing at scale."}</p>
+                            <p class="statement">{"I have in-depth knowledge of the software development process from beginning to end, my mantra is that process should be there to enable efficiency, not for the sake of it."}</p>
+                            <p class="statement">{"As a team lead, I create high autonomy environments; my leadership style is based on trust and communicating what is important clearly. I'm used to interact with stakeholders at different levels of technical detail, from board members and investors, to product owners and scientists, to engineers."}</p>
+                            <p class="statement">{"I'm a team builder, I started defining hiring strategies at source{d}, and went to do so at Repositive & Fluidic Analytics by taking an active role in the hiring of members of my team."}</p>
                         </Section>
                         <Section title="STRENGTHS">
                             <div class="strengths">
                                 <div class="strengths__strength">
-                                    <Image image="./assets/software_development.svg" text="Software Development"/>
+                                    <Image image="./assets/software_development.svg" text="Software Engineering"/>
                                 </div>
                                 <div class="strengths__strength strengths__strength--low">
                                     <Image image="./assets/project_management.svg" text="Project Management"/>
@@ -101,10 +102,9 @@ impl Component for Resume {
                                 }>
                                     <Job open={true} title="Lead Engineer" company={html!{<a href="https://www.fluidic.com/">{"Fluidic Analytics"}</a>}}>
                                         <ul>
+                                            <li>{"Managed the technical backlog, interacted with the product owner and marketing to define high level implementation priorities and release milestones"}</li>
+                                            <li>{"Acted as facilitator and guided the technical ticket breakdowns. For complex problems introduced an RFC style technical definition system"}</li>
                                             <li>{"Implemented the cloud architecture from scratch, services in async Rust & Python, Azure Blob storage, Postgres, Kubernetes"}</li>
-                                            <li>{"Designed and implemented the data synchronization mechanism between instruments and cloud using JSON-RPC"}</li>
-                                            <li>{"Provided tooling for provisioning and generation of certificates & credentials for new instruments in the production line"}</li>
-                                            <li>{"Designed and implemented the experiment management, instrument management and permission modules"}</li>
                                         </ul>
                                     </Job>
                                 </TimeLineValue>
@@ -115,10 +115,12 @@ impl Component for Resume {
                                 }>
                                     <Job open={open} title="Tech Lead" company=html!{<a href="https://web.archive.org/web/20180830162534/https://repositive.io/">{"Repositive"}</a>}>
                                         <ul>
-                                            <li>{"Line management,technical direction and vision"}</li>
-                                            <li>{"Managed the technial and architecture backlog"}</li>
+                                            <li>{"Line management of 10 team members, technical direction and vision for the whole company"}</li>
+                                            <li>{"Managed the technical and architecture backlog for the whole company"}</li>
                                             <li>{"Achieved a tight iteration loop of two weeks between releases that included atomated testing and manual QA"}</li>
                                             <li>{"Ensured high quality tooling was in place, new team members were able to push code in a couple days without prior introduction to the system architecture"}</li>
+                                            <li>{"I took active part during investment rounds by taking care of technical due diligence"}</li>
+                                            <li>{"Designed the hiring process, interviewed and hired the technical team."}</li>
                                         </ul>
                                     </Job>
                                 </TimeLineValue>
