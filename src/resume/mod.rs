@@ -203,7 +203,6 @@ impl Component for Resume {
                                     <Skill score=3 name="Java"/>
                                     <Skill score=3 name="Android"/>
                                     <Skill score=2 name="Scala"/>
-                                    <Skill score=2 name="Play Framework"/>
                                     <Skill score=1 name="Haskell"/>
                                     <Skill score=1 name="Lua"/>
                                     <Skill score=1 name="VHDL"/>
