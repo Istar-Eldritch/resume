@@ -78,6 +78,9 @@
         
         &__caret {
             margin-right: 0.5rem;
+            &--hidden {
+                display: none;
+            }
         }
     }
     &__company {

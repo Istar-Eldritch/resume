@@ -247,6 +247,23 @@ impl Component for Resume {
                                 </div>
                             </div>
                         </Section>
+                        <Section title="EDUCATION">
+                                <div class="education">
+                                    <TimeLineValue
+                                    from={UtcDate::from_utc(NaiveDate::from_ymd(2019, 9, 1), Utc {})}
+                                    to={present
+                                    }>
+                                        <Job title="BSc Mathematics" company=html!{<a href="https://open.ac.uk">{"Open University"}</a>}>
+                                        </Job>
+                                    </TimeLineValue>
+                                    <TimeLineValue
+                                    from={UtcDate::from_utc(NaiveDate::from_ymd(2012, 9, 1), Utc {})}
+                                    to={UtcDate::from_utc(NaiveDate::from_ymd(2014,6,1), Utc {})
+                                    }>
+                                        <Job title="HNC Software Engineering" company=html!{<a href="https://www.iessanclemente.net/">{"IES San Clemente"}</a>}></Job>
+                                    </TimeLineValue>
+                                </div>
+                        </Section>
                         <Section title="INTERESTS">
                             <div class="interests">
                                 <Image image="./assets/open-source.svg" text="Open Source" class=classes!("interests__image")/>
@@ -359,7 +376,8 @@ impl Component for Section {
 struct JobProperties {
     pub title: String,
     pub company: VNode,
-    pub children: Children,
+    #[prop_or_default]
+    pub children: Option<Children>,
     #[prop_or_default]
     pub open: bool,
 }
@@ -402,12 +420,19 @@ impl Component for Job {
     fn view(&self) -> Html {
         let mut detail_class = classes!("job__detail");
         let mut caret_class = classes!("job__title__caret", "fas");
-        if !self.props.open {
-            detail_class.push("job__detail--hidden");
-            caret_class.push("fa-caret-right");
+        let children = if self.props.children.is_none() {
+            log::debug!("No children!");
+            caret_class.push("job__title__caret--hidden");
+            html!()
         } else {
-            caret_class.push("fa-caret-down");
-        }
+            if !self.props.open {
+                detail_class.push("job__detail--hidden");
+                caret_class.push("fa-caret-right");
+            } else {
+                caret_class.push("fa-caret-down");
+            }
+            html!(<div>{ self.props.children.clone().unwrap() }</div>)
+        };
 
         let click_cb = self.link.callback(|_| JobMessages::ToggleDetail);
 
@@ -416,7 +441,7 @@ impl Component for Job {
                 <span class="job__title" onclick=click_cb><span><i class={caret_class}/></span> <span>{self.props.title.clone()}</span></span>
                 <span class="job__company">{self.props.company.clone()}</span>
                 <div class=detail_class>
-                    {self.props.children.clone()}
+                    {children}
                 </div>
             </div>
         }
