@@ -39,7 +39,7 @@ impl Component for TimeLineValue {
         let to_date = if self.props.to.month() == present.get_utc_month() + 1 {
             String::from("Present")
         } else {
-            self.props.to.format("%B %Y").to_string()
+            selfx.props.to.format("%B %Y").to_string()
         };
 
         let from_date = self.props.from.format("%B %Y").to_string();
