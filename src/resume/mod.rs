@@ -102,7 +102,7 @@ impl Component for Resume {
                                 }>
                                     <Job open={true} title="Lead Engineer Cloud" company={html!{<a href="https://www.fluidic.com/">{"Fluidic Analytics"}</a>}}>
                                         <ul>
-                                            <li>{"Managed the technical backlog, define high level implementation priorities and release milestones"}</li>
+                                            <li>{"Managed the technical backlog, defined high level implementation priorities and release milestones"}</li>
                                             <li>{"Acted as facilitator and guided the technical ticket breakdowns. For complex problems introduced an RFC style technical definition system"}</li>
                                             <li>{"Designed and implemented the cloud architecture from scratch, services in async Rust, Azure Blob storage, Postgres, Kubernetes"}</li>
                                             <li>{"Worked across team boundaries, helping defining interactions between the instrument and the cloud systems"}</li>
@@ -130,7 +130,7 @@ impl Component for Resume {
                                 }>
                                     <Job open={open} title="Backend Engineer" company=html!{<a href="https://web.archive.org/web/20180830162534/https://repositive.io/">{"Repositive"}</a>}>
                                         <ul>
-                                        <li>{"Designed and implmented the first iterations of the Discover platform, migrated the monolitic application to microservices in Rust & Typescript"}</li>
+                                        <li>{"Designed and implemented the first iterations of the Discover platform, migrated the monolitic application to microservices in Rust & Typescript"}</li>
                                         <li>{"Implemented a fine grained attribute based permission system (ABAC)"}</li>
                                         <li>{"Implemented a custom DSL for search based on PEGs, with backends to SQL & ElasticSearch"}</li>
                                         <li>{"Trialed and managed the transition to Kubernetes on GCP and AWS"}</li>
