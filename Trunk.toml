@@ -1,0 +1,4 @@
+
+[build]
+dist = "docs"
+public_url = "/resume/"
