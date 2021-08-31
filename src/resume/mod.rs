@@ -56,7 +56,7 @@ impl Component for Resume {
                 <div class="resume__header">
                     <div class="resume__header__intro">
                         <span class="resume__header__intro__name">{"Ruben Paz"}</span>
-                        <span class="resume__header__intro__title">{"Software Engineer"}</span>
+                        <span class="resume__header__intro__title">{"Staff Engineer"}</span>
                     </div>
                     <div class="resume__header__contact">
                         <Contact title="Address">
@@ -75,10 +75,10 @@ impl Component for Resume {
                 <div class="resume__content">
                     <div class="resume__content__row">
                         <Section title="PERSONAL STATEMENT">
-                            <p class="statement">{"I'm a software engineer with a wide range of cross-platform experience in life sciences and healthcare, mainly designing and building infrastructure for data processing at scale."}</p>
+                            <p class="statement">{"I'm a software engineer and team lead with a wide range of cross-platform experience, mainly designing and building infrastructure for data processing at scale in the life sciences."}</p>
                             <p class="statement">{"I have in-depth knowledge of the software development process from beginning to end, my mantra is that process should be there to enable efficiency, not for the sake of it."}</p>
                             <p class="statement">{"As a team lead, I create high autonomy environments; my leadership style is based on trust and communicating what is important clearly. I'm used to interact with stakeholders at different levels of technical detail, from board members and investors, to product owners and scientists, to engineers."}</p>
-                            <p class="statement">{"I'm a team builder, I started defining hiring strategies at source{d}, and went to do so at Repositive & Fluidic Analytics by taking an active role in the hiring of members of my team."}</p>
+                            <p class="statement">{"I'm a team builder, I started defining hiring strategies at source{d}, and went to do so at Repositive & Fluidic Analytics by taking an active role in the hiring of members of my team and coaching them during their onboarding."}</p>
                         </Section>
                         <Section title="STRENGTHS">
                             <div class="strengths">
@@ -100,11 +100,12 @@ impl Component for Resume {
                                     from={UtcDate::from_utc(NaiveDate::from_ymd(2019, 10, 1), Utc {})}
                                     to={present
                                 }>
-                                    <Job open={true} title="Lead Engineer" company={html!{<a href="https://www.fluidic.com/">{"Fluidic Analytics"}</a>}}>
+                                    <Job open={true} title="Lead Engineer Cloud" company={html!{<a href="https://www.fluidic.com/">{"Fluidic Analytics"}</a>}}>
                                         <ul>
                                             <li>{"Managed the technical backlog, define high level implementation priorities and release milestones"}</li>
                                             <li>{"Acted as facilitator and guided the technical ticket breakdowns. For complex problems introduced an RFC style technical definition system"}</li>
-                                            <li>{"Implemented the cloud architecture from scratch, services in async Rust, Azure Blob storage, Postgres, Kubernetes"}</li>
+                                            <li>{"Designed and implemented the cloud architecture from scratch, services in async Rust, Azure Blob storage, Postgres, Kubernetes"}</li>
+                                            <li>{"Worked across team boundaries, helping defining interactions between the instrument and the cloud systems"}</li>
                                         </ul>
                                     </Job>
                                 </TimeLineValue>
