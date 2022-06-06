@@ -95,11 +95,22 @@ impl Component for Resume {
                         </Section>
                         <Section title="WORK EXPERIENCE">
                             <TimeLine>
+                                <TimeLineValue
+                                    from={UtcDate::from_utc(NaiveDate::from_ymd(2021, 11, 1), Utc {})}
+                                    to={present
+                                }>
+                                    <Job open={true} title="Staff Engineer" company={html!{<a href="https://elephant.healthcare/">{"Elephant Healthcare"}</a>}}>
+                                        <ul>
+                                            <li>{"Implemented eventual consistency system to support the eventual driven architecture"}</li>
+                                            <li>{"Helped define the messaging conventions for the eventual driven architecture"}</li>
+                                            <li>{"Identified architectural issues, proposed actions & implemented solutions"}</li>
+                                        </ul>
+                                    </Job>
+                                </TimeLineValue>
 
                                 <TimeLineValue
                                     from={UtcDate::from_utc(NaiveDate::from_ymd(2019, 10, 1), Utc {})}
-                                    to={present
-                                }>
+                                    to={UtcDate::from_utc(NaiveDate::from_ymd(2021, 11, 1), Utc {})}>
                                     <Job open={true} title="Lead Engineer Cloud" company={html!{<a href="https://www.fluidic.com/">{"Fluidic Analytics"}</a>}}>
                                         <ul>
                                             <li>{"Managed the technical backlog, defined high level implementation priorities and release milestones"}</li>
