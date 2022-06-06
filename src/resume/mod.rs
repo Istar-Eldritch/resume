@@ -101,8 +101,8 @@ impl Component for Resume {
                                 }>
                                     <Job open={true} title="Staff Engineer" company={html!{<a href="https://elephant.healthcare/">{"Elephant Healthcare"}</a>}}>
                                         <ul>
-                                            <li>{"Implemented eventual consistency system to support the eventual driven architecture"}</li>
-                                            <li>{"Helped define the messaging conventions for the eventual driven architecture"}</li>
+                                            <li>{"Implemented eventual consistency system to support the event driven architecture"}</li>
+                                            <li>{"Helped define the messaging conventions for the event driven architecture"}</li>
                                             <li>{"Identified architectural issues, proposed actions & implemented solutions"}</li>
                                         </ul>
                                     </Job>
