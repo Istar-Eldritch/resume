@@ -60,8 +60,8 @@ impl Component for Resume {
                     </div>
                     <div class="resume__header__contact">
                         <Contact title="Address">
-                            <span class="resume__header__contact__item">{"4 Rachel Close"}</span>
-                            <span class="resume__header__contact__item">{"CB5 8TP"}</span>
+                            <span class="resume__header__contact__item">{"3 Moss Bank"}</span>
+                            <span class="resume__header__contact__item">{"CB4 1UR"}</span>
                             <span class="resume__header__contact__item">{"Cambridge UK"}</span>
                         </Contact>
                         <Contact title="Contact">
@@ -76,9 +76,8 @@ impl Component for Resume {
                     <div class="resume__content__row">
                         <Section title="PERSONAL STATEMENT">
                             <p class="statement">{"I'm a software engineer and team lead with a wide range of cross-platform experience, mainly designing and building infrastructure for data processing at scale in the life sciences."}</p>
-                            <p class="statement">{"I have in-depth knowledge of the software development process from beginning to end, my mantra is that process should be there to enable efficiency, not for the sake of it."}</p>
-                            <p class="statement">{"As a team lead, I create high autonomy environments; my leadership style is based on trust and communicating what is important clearly. I'm used to interact with stakeholders at different levels of technical detail, from board members and investors, to product owners and scientists, to engineers."}</p>
-                            <p class="statement">{"I'm a team builder, I started defining hiring strategies at source{d}, and went to do so at Repositive & Fluidic Analytics by taking an active role in the hiring of members of my team and coaching them during their onboarding."}</p>
+                            <p class="statement">{"As a team lead, I create high autonomy environments; my leadership style is based on trust and communicating what is important clearly. I'm used to interacting with stakeholders at different levels of technical detail, from board members and investors to product owners and scientists, to engineers."}</p>
+                            <p class="statement">{"I am currently evolving my skillset toward low-level systems. In particular, embedded systems, OS design and compilers. I dabbled with VHDL, designing a custom 12-bit CPU influenced by the PDP-8 with UART peripherals for IO. My current pet project is an OS targeting a multicore RISC-V SoC."}</p>
                         </Section>
                         <Section title="STRENGTHS">
                             <div class="strengths">
